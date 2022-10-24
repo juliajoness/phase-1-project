@@ -1,7 +1,4 @@
-.like {
-    cursor: pointer;
-  }
-
-  .activated-heart {
-    color: red;
-  }
+body{
+  background-color : #8B0000;
+  font-family: Copperplate, Papyrus, fantasy;  
+}

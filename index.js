@@ -14,13 +14,18 @@ fetch(charactersUrl)
     characterOnThePage.forEach(characterObj=> {
         renderCharacters(characterObj)
         //console.log(characterObj)
-
+        document.querySelector('img').addEventListener("mouseover", ()=>{
+            const funImg = document.createElement("img")
+            funImg.src = "./piggy.gif"
+            characterDiv.append(funImg)
+        })
     })
     reviewForm.addEventListener("submit", e => {
         e.preventDefault()
         const characterReview = document.createElement('p')
         characterReview.textContent = reviewInput.value
-        reviewDiv.append(characterReview)
+        reviewDiv.append(characterReview)   
+     
     })
     // searchForm.addEventListener('submit', (e) =>{
     //     e.preventDefault()
@@ -35,11 +40,7 @@ fetch(charactersUrl)
 
     // })// searchForm Submit Event
 
-    // document.querySelector('img').addEventListener("mouseover", ()=>{
-    //     const funImg = document.createElement("img")
-    //     funImg.src = "./piggy.gif"
-    //     characterDiv.append(funImg)
-    // })
+ 
 
 }) // fetch 2nd then
 
@@ -79,3 +80,7 @@ function renderCharacters (characterObj ) {
 
 
 } //renderCharacter function
+// url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2") format("woff2"),
+//     url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff") format("woff"),
+//     url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.ttf") format("truetype"),
+//     url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter") format("svg");
