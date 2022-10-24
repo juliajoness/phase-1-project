@@ -1,0 +1,7 @@
+.like {
+    cursor: pointer;
+  }
+
+  .activated-heart {
+    color: red;
+  }
