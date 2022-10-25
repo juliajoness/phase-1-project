@@ -36,6 +36,7 @@ fetch(charactersUrl)
         characterComment.className = 'comment'
         const deleteBtn = document.createElement('button')
         deleteBtn.textContent= ' X '
+        deleteBtn.id = 'delete-btn'
         characterComment.append(deleteBtn)
         commentDiv.append(characterComment)
         commentForm.reset()
@@ -117,7 +118,7 @@ function renderCharacters (characterObj ) {
     characterHouse.textContent = characterObj.house
     characterHouse.className = `${characterObj.house}`
 
-    characterCardBack.append(characterNameList, characterSpecies, characterGender, characterDOB,characterHouse)
+    characterCardBack.append(characterNameList, characterSpecies, characterGender, characterDOB, characterHouse)
     characterEachCard.append(characterCardBack)
 
     characterCard.append(characterEachCard, likeBtn)
