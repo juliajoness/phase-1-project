@@ -1,7 +1,7 @@
 body{
   background-color : #8B0000;
   font-family: Copperplate, Papyrus, fantasy;
-  /* url(cursor/hufflepuff.png), auto; */
+  /* cursor:  url(cursor/hufflepuff.png), auto; */
 }
 
 #header {
@@ -116,11 +116,29 @@ body{
 
 .flip-card-back{
     text-align: center;
-    background-color: #0e1a40;
+    background-color: #000;
     color: white;
     transform: rotateY(180deg);
 }
 
-/* .hufflepuff {
+.Hufflepuff {
+    background-image: url('Hufflepuff.png');
+    background-color: #f0c75e;
+}
 
-} */
+.Gryffindor {
+    background-image: url('Gryffindor.png');
+    background-color: #d3a625
+
+}
+.Ravenclaw {
+    background-image: url('Ravenclaw.png');
+    background-color: #0e1a40;
+
+}
+
+.Slytherin {
+    background-image: url('Slytherin.png');
+    background-color: #1a472a
+
+}

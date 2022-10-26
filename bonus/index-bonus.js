@@ -105,7 +105,13 @@ function renderCharacters (characterObj ) {
     })
     // render character info -- back card
     const characterCardBack = document.createElement ('div')
-    characterCardBack.className='flip-card-back'
+
+    if (`${characterObj.house}` === ''){
+       characterCardBack.className='flip-card-back'
+    }else{
+       characterCardBack.classList.add('flip-card-back', `${characterObj.house}`);
+    }
+    console.log (characterCardBack.className)
     const characterNameList = document.createElement('h1')
     characterNameList.textContent = characterObj.name
     const characterSpecies = document.createElement('h2')
@@ -116,7 +122,7 @@ function renderCharacters (characterObj ) {
     characterDOB.textContent = characterObj.dateOfBirth
     const characterHouse = document.createElement('h2')
     characterHouse.textContent = characterObj.house
-    characterHouse.className = `${characterObj.house}`
+
 
     characterCardBack.append(characterNameList, characterSpecies, characterGender, characterDOB, characterHouse)
     characterEachCard.append(characterCardBack)
