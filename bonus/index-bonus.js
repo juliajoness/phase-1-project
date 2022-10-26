@@ -6,7 +6,7 @@ const commentForm = document.querySelector('form')
 const commentInput =  document.querySelector('.comment-input')
 const commentDiv = document.querySelector('#comment-panel')
 const EMPTY_HEART = '♡'
-const FULL_HEART = '♥'
+const FULL_HEART = '❤️'
 
 fetch(charactersUrl)
 .then(r => r.json())

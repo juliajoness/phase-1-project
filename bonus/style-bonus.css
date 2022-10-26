@@ -1,7 +1,7 @@
 body{
   background-color : #8B0000;
   font-family: Copperplate, Papyrus, fantasy;
-  /* cursor:  url(cursor/hufflepuff.png), auto; */
+  cursor: url(harrypotterquil.png), auto;
 }
 
 #header {
@@ -23,6 +23,7 @@ body{
 .comment-input {
     position: relative;
     height: 50px;
+    cursor: pointer;
 }
 #submit-button {
         border: none;
@@ -47,9 +48,11 @@ body{
     list-style: none;
     text-align: center;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 #delete-btn{
     border : transparent;
+    cursor: pointer;
 
 }
 #comment-pannel{
@@ -68,10 +71,12 @@ body{
 
 .like-Btn {
     position: relative;
-    height: 50px;
+    height: 30px;
     width: 50px;
-    font-size: 30px;
+    font-size: 17px;
     margin-bottom: 20px;
+    cursor: url(harrypotterquil.png), auto;
+
 }
 
 .flip-card{
