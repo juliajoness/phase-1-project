@@ -1,0 +1,126 @@
+body{
+  background-color : #8B0000;
+  font-family: Copperplate, Papyrus, fantasy;
+  /* url(cursor/hufflepuff.png), auto; */
+}
+
+#header {
+    text-align: center;
+    padding: 50px;
+    font-size: 80px;
+}
+
+#form-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: fit-content;
+    position: relative;
+    padding-inline-end: 44px;
+    padding-inline-start: 52px;
+    padding: 200px auto;
+}
+.comment-input {
+    position: relative;
+    height: 50px;
+}
+#submit-button {
+        border: none;
+        margin: 20px;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 15%;
+        position: relative;
+}
+
+.comment {
+    width: 300px;
+    border-radius: 15px;
+    padding: 10px;
+    margin: auto;
+    background-color: white;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#delete-btn{
+    border : transparent;
+
+}
+#comment-pannel{
+    padding: 200px auto;
+    position: relative;
+}
+
+.img {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+    width: 300px;
+    max-height: 400px;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.like-Btn {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.flip-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.characterInfo{
+    background-color: transparent;
+    border: 1px solid transparent;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    background-color: #bbb;
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width:300px;
+    height: 400px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.characterInfo:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+.flip-card-front, .flip-card-back {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+
+.flip-card-back{
+    text-align: center;
+    background-color: #0e1a40;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* .hufflepuff {
+
+} */
