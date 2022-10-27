@@ -1,34 +1,28 @@
 const charactersUrl = 'https://hp-api.herokuapp.com/api/characters'
-const characterContainer = document.querySelector('.flip-card')
-const header = document.querySelector('h1')
 
+const header = document.querySelector('h1')
 const commentForm = document.querySelector('form')
 const commentInput =  document.querySelector('.comment-input')
 const commentDiv = document.querySelector('#comment-panel')
+
+const characterContainer = document.querySelector('.flip-card')
 const EMPTY_HEART = '♡'
 const FULL_HEART = '❤️'
 
+// GET information from API
 fetch(charactersUrl)
 .then(r => r.json())
 .then(characterArray =>{
-   // renderCharacters(characterArray)
-    const characterOnThePage = characterArray.splice(0, 25)
+
+   //target first 24 objects
+    const characterOnThePage = characterArray.splice(0, 24)
     characterOnThePage.forEach(characterObj=> {
 
         renderCharacters(characterObj)
 
-    //     document.querySelector('img').addEventListener("mouseover", (characterObj)=>{
-    //         renderCharacters(characterObj)
-    //    })
-    })
+    })//foreach function
 
-    document.querySelectorAll('.flip-card-inner').forEach(function(characterObj) {
-        characterObj.addEventListener('mouseover', function () {
-
-            this.classList.toggle('flipped')
-        })
-    })// mouseover
-
+    // submit event to the comment form
     commentForm.addEventListener("submit", e => {
         e.preventDefault()
         const characterComment = document.createElement('li')
@@ -45,25 +39,11 @@ fetch(charactersUrl)
             e.target.parentNode.remove()
         })
 
-    })
+    })// submit event
 
-    // searchForm.addEventListener('submit', (e) =>{
-    //     e.preventDefault()
-    //     characterDiv.innerHTML = " "
-    //     // searchInput.value
-    //     searchInput.value = characterNameList.textContent
-    //     characterImg.src = characterObj.image
-    //     characterSpecies.textContent = characterObj.species
-    //     characterGender.textContent = characterObj.gender
-    //     characterDiv.append(characterCard)
-    //     characterCard.append(characterNameList,characterImg, characterSpecies, characterGender)
+}) // fetch 2nd .then
 
-    // })// searchForm Submit Event
-
-
-
-}) // fetch 2nd then
-
+// change the color of the header "The Harry Potter Gallery"
 header.addEventListener("mouseover", e =>{
     e.target.style.color = 'white'
     header.addEventListener("mouseleave",e => {
@@ -71,12 +51,12 @@ header.addEventListener("mouseover", e =>{
     })
 })
 
+// render information to the character cards
 function renderCharacters (characterObj ) {
     const characterEachCard = document.createElement('div')
     characterEachCard.className = 'flip-card-inner'
     const characterCard = document.createElement('div')
     characterCard.className = 'characterInfo'
-
     // render img -- front card
     const characterCardFront = document.createElement ('div')
     characterCardFront.className='flip-card-front'
@@ -87,11 +67,10 @@ function renderCharacters (characterObj ) {
     const likeBtn = document.createElement('button')
     likeBtn.textContent = EMPTY_HEART
     likeBtn.className = 'like-Btn'
+    //append img  to the front of the card
     characterCardFront.append(characterImg)
     characterEachCard.append(characterCardFront)
-
-
-
+    // function the like btn
     let redHeart = false;
     likeBtn.addEventListener("click", ()=>{
         redHeart = !redHeart;
@@ -103,15 +82,15 @@ function renderCharacters (characterObj ) {
             likeBtn.textContent = EMPTY_HEART;
         }
     })
-    // render character info -- back card
+    // render character info (name, species, gender, house, dob )-- back card
     const characterCardBack = document.createElement ('div')
-
+    // assign classname(s) to the back of each card
     if (`${characterObj.house}` === ''){
        characterCardBack.className='flip-card-back'
     }else{
        characterCardBack.classList.add('flip-card-back', `${characterObj.house}`);
     }
-    console.log (characterCardBack.className)
+
     const characterNameList = document.createElement('h1')
     characterNameList.textContent = characterObj.name
     const characterSpecies = document.createElement('h2')
@@ -123,20 +102,11 @@ function renderCharacters (characterObj ) {
     const characterHouse = document.createElement('h2')
     characterHouse.textContent = characterObj.house
 
-
+    //append all the info to the back of the card
     characterCardBack.append(characterNameList, characterSpecies, characterGender, characterDOB, characterHouse)
     characterEachCard.append(characterCardBack)
-
+    // append the like btn to the entire card
     characterCard.append(characterEachCard, likeBtn)
     characterContainer.append(characterCard)
 }
 //renderCharacter function
-
-
-
-
-
-// url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff2") format("woff2"),
-//     url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.woff") format("woff"),
-//     url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.ttf") format("truetype"),
-//     url("//db.onlinewebfonts.com/t/0421d4186d6efbfc5331fe180895e780.svg#Harry Potter") format("svg");

@@ -2,12 +2,10 @@
     margin:0;
 }
 
-
 body{
-  background-color : #8B0000;
+  background-color : #222f5b;
   font-family: HarryPotterFont;
   cursor: url(harrypotterquil.png), auto;
-  border:rgb(221, 221, 221) solid 2px
 }
 
 #backgroundImg{
@@ -15,6 +13,8 @@ body{
     width: 100vw;
     min-height: 100vh;
     background-image: url('./hp-bg.jpg');
+    object-fit: cover;
+    overflow: hidden;
 }
 
 #header {
@@ -28,14 +28,12 @@ body{
     width: 250px;
     padding: 10px;
     margin: auto;
-    border-bottom : 3px dashed whitesmoke;
+    border-bottom : 3px dashed #5d5d5d;;
     list-style: none;
     text-align: center;
     margin-bottom: 20px;
-    cursor: pointer;
     color: whitesmoke
 }
-
 
 #form-content {
     display: flex;
@@ -48,8 +46,8 @@ body{
     padding: 200px auto;
     font-family: HarryPotterFont;
     letter-spacing: 0.1em;
-
 }
+
 .comment-input {
     font-family: HarryPotterFont;
     position: relative;
@@ -59,19 +57,19 @@ body{
 }
 
 #submit-button {
-        border: none;
-        margin: 20px;
-        outline: 0;
-        display: inline-block;
-        padding: 8px;
-        color: white;
-        background-color: #000;
-        text-align: center;
-        cursor: pointer;
-        width: 10%;
-        position: relative;
-        font-family: HarryPotterFont;
-        letter-spacing: 0.1em;
+    border: none;
+    margin: 20px;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 10%;
+    position: relative;
+    font-family: HarryPotterFont;
+    letter-spacing: 0.1em;
 }
 
 .comment {
@@ -83,8 +81,8 @@ body{
     list-style: none;
     text-align: center;
     margin-bottom: 20px;
-    cursor: pointer;
 }
+
 #delete-btn{
     border : transparent;
     cursor: pointer;
@@ -103,6 +101,7 @@ body{
     max-height: 400px;
     min-height: 400px;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .like-Btn {
@@ -111,17 +110,17 @@ body{
     width: 50px;
     font-size: 17px;
     margin-bottom: 20px;
-    cursor: url(harrypotterquil.png), auto;
-
+    cursor: pointer;
 }
 
 #characterHeader{
     padding-top: 50px;
     padding-bottom: 10px;
     text-align: center;
-    border-bottom : 3px dashed #000;
+    border-bottom : 3px dashed #5d5d5d;
     width: 400px;
     margin: auto;
+    color : #bebebe
 }
 
 .flip-card{
@@ -181,27 +180,23 @@ body{
 .Gryffindor {
     background-image: url('Gryffindor.png');
     background-color: #d3a625
-
 }
 .Ravenclaw {
     background-image: url('Ravenclaw.png');
     background-color: #0e1a40;
-
 }
 
 .Slytherin {
     background-image: url('Slytherin.png');
     background-color: #1a472a
-
 }
 
 h2, h3, p {
     position: relative;
-    background-color: #8B0000;
+    background-color: #222f5b;
     opacity: 0.8;
     letter-spacing: 0.1em;
     margin: 20px;
-
 }
 
 h1{
@@ -211,12 +206,6 @@ h1{
 p {
     font-family: Copperplate, Papyrus, fantasy;
 }
-/* #gif{
-    display: flex;
-    max-width: 300px;
-    bottom: 0;
-    left: 0;
-} */
 
 @font-face {
     font-family: HarryPotterFont;
